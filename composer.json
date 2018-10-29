@@ -1,0 +1,56 @@
+{
+    "name": "adrosoftware/shared-slim-skeleton",
+    "description": "A simple skeleton to use slim on a shared server",
+    "type": "project",
+    "keywords": [
+        "php",
+        "slim",
+        "adrorocker",
+        "skeleton"
+    ],
+    "homepage": "https://github.com/adrosoftware/slim-skeleton",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Adro Rocker",
+            "email": "me@adro.rocks",
+            "homepage": "https://github.com/adrorocker"
+        }
+    ],
+    "require": {
+        "php": ">=7.2",
+        "league/plates": "^3.3",
+        "php-di/slim-bridge": "^2.0",
+        "slim/slim": "^3.11",
+        "vlucas/phpdotenv": "^2.2"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "~6.0",
+        "symfony/var-dumper": "^4.1"
+    },
+    "autoload": {
+        "psr-4": {
+            "App\\": "app/"
+        },
+        "files": [
+            "app/helpers.php"
+        ]
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "App\\Tests\\": "tests/"
+        },
+        "files": [
+        ]
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "minimum-stability": "stable",
+    "prefer-stable": true,
+    "scripts": {
+        "post-create-project-cmd": [
+            "php -r \"copy('.env.example', '.env');\""
+        ]
+    }
+}
